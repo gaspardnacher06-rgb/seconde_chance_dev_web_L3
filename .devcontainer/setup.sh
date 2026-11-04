@@ -13,7 +13,7 @@ composer --version
 echo "Extensions MySQL"
 php -m | grep -E 'pdo_mysql|mysqli'
 
-composer install
+composer install --prefer-dist --no-interaction --no-progress
 
 if [ ! -f .env ]; then
     cp .env.example .env

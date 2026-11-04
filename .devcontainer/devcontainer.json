@@ -1,35 +1,18 @@
 {
     "name": "Examen Laravel L3",
-
     "dockerComposeFile": "docker-compose.yml",
-
     "service": "app",
-
     "workspaceFolder": "/workspaces/projet-exam",
-
-    "portsAttributes": {
-        "8000": {
-            "label": "Laravel",
-            "onAutoForward": "openBrowser"
-        }
-    },
-
-    "postCreateCommand": "bash .devcontainer/setup.sh",
-
-
+    "forwardPorts": [8000],
     "customizations": {
         "vscode": {
             "settings": {
-                "remote.autoForwardPorts": true,
                 "chat.disableAIFeatures": true,
                 "github.copilot.enable": {
                     "*": false
                 },
                 "github.copilot.nextEditSuggestions.enabled": false
-            },
-            "extensions": [
-                "bmewburn.vscode-intelephense-client"
-            ]
+            }
         }
     }
 }
