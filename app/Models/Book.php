@@ -10,6 +10,7 @@ class Book extends Model
         'title',
         'summary',
         'publication_date',
+        'page_count'
     ];
 
     protected function casts(): array
@@ -17,5 +18,8 @@ class Book extends Model
         return [
             'publication_date' => 'date',
         ];
+    }
+    public function autor(){
+        return $this->belongsToMany(Author::class);
     }
 }

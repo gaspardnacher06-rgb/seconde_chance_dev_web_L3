@@ -18,6 +18,16 @@
             <p class="lead mt-4">
                 {{ $book->summary }}
             </p>
+            <p class="lead mt-4">
+                {{ $book->page_count }}
+            </p>
         </div>
     </article>
+    <a href="/books/{{ $book->id }}/edit">Modifier</a>
+    <form action="/books/{{ $book->id }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit">Supprimer</button>
+    </form>
+
 @endsection
